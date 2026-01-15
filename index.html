@@ -15,7 +15,7 @@
         .report-card:hover { transform: scale(1.03) rotate(-1deg); box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25); }
         .floating { animation: float 3s ease-in-out infinite; }
         @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
-        .curriculum-card { border-left: 4px solid #3b82f6; }
+        .curriculum-card { border-left: 4px solid #3b82f6; } /* Tailwind 기본 색상 사용 */
     </style>
 </head>
 <body>
@@ -78,21 +78,30 @@
     <section class="py-24 bg-slate-50">
         <div class="container mx-auto px-6">
             <h2 data-aos="fade-up" class="text-3xl md:text-5xl font-black mb-16 text-center">Curriculum</h2>
-            <div class="max-w-4xl mx-auto space-y-6">
-                <div data-aos="fade-left" class="curriculum-card bg-white p-8 rounded-2xl shadow-sm">
-                    <div class="text-blue-600 font-black text-lg mb-2">STEP 01. 상반기 (기초 및 개념 확립)</div>
-                    <h4 class="text-xl font-bold mb-4 italic">"미적분 개념의 본질적 이해"</h4>
-                    <p class="text-slate-500 leading-relaxed font-medium">단순 암기가 아닌, 치대생만의 논리적인 개념 확립 단계를 거칩니다. 교과서 개념이 실전 기출 문항으로 어떻게 연결되는지 원리를 분석합니다.</p>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div data-aos="fade-left" class="curriculum-card bg-white p-8 rounded-2xl shadow-sm flex items-start space-x-6">
+                    <div class="text-5xl flex-shrink-0">📚</div>
+                    <div>
+                        <div class="text-blue-600 font-black text-lg mb-2">STEP 01. 상반기 (기초 및 개념 확립)</div>
+                        <h4 class="text-xl font-bold mb-4 italic">"미적분 개념의 본질적 이해와 예습 과제"</h4>
+                        <p class="text-slate-500 leading-relaxed font-medium">단순 암기가 아닌, 치대생만의 논리적인 개념 확립 단계를 거칩니다. 교과서 개념이 실전 기출 문항으로 어떻게 연결되는지 원리를 분석하고, **예습 과제**로 다음 수업을 대비합니다.</p>
+                    </div>
                 </div>
-                <div data-aos="fade-left" data-aos-delay="100" class="curriculum-card bg-white p-8 rounded-2xl shadow-sm border-l-blue-400">
-                    <div class="text-blue-600 font-black text-lg mb-2">STEP 02. 중반기 (심화 및 기출 정복)</div>
-                    <h4 class="text-xl font-bold mb-4 italic">"킬러 문항 도구 정리 및 적용"</h4>
-                    <p class="text-slate-500 leading-relaxed font-medium">준킬러/킬러 문항을 풀기 위한 '행동 강령'을 정리합니다. 자체 제작 교재를 활용해 낯선 문제 앞에서도 당황하지 않는 힘을 기릅니다.</p>
+                <div data-aos="fade-left" data-aos-delay="100" class="curriculum-card bg-white p-8 rounded-2xl shadow-sm flex items-start space-x-6">
+                    <div class="text-5xl flex-shrink-0">📝</div>
+                    <div>
+                        <div class="text-blue-600 font-black text-lg mb-2">STEP 02. 중반기 (심화 및 기출 정복)</div>
+                        <h4 class="text-xl font-bold mb-4 italic">"킬러 문항 도구 정리와 복습 테스트"</h4>
+                        <p class="text-slate-500 leading-relaxed font-medium">준킬러/킬러 문항을 풀기 위한 '행동 강령'을 정리합니다. 자체 제작 교재를 활용해 낯선 문제 앞에서도 당황하지 않는 힘을 기르고, **매 수업 복습 테스트**로 빈틈없이 점검합니다.</p>
+                    </div>
                 </div>
-                <div data-aos="fade-left" data-aos-delay="200" class="curriculum-card bg-white p-8 rounded-2xl shadow-sm border-l-blue-300">
-                    <div class="text-blue-600 font-black text-lg mb-2">STEP 03. 하반기 (파이널 실전 감각)</div>
-                    <h4 class="text-xl font-bold mb-4 italic">"완벽한 시간 관리 및 오답 제로"</h4>
-                    <p class="text-slate-500 leading-relaxed font-medium">수능과 동일한 호흡으로 실전 모의고사를 훈련합니다. 수학뿐만 아니라 전과목 밸런스를 고려한 마무리 학습 전략과 멘탈 관리를 병행합니다.</p>
+                <div data-aos="fade-left" data-aos-delay="200" class="curriculum-card bg-white p-8 rounded-2xl shadow-sm flex items-start space-x-6">
+                    <div class="text-5xl flex-shrink-0">📈</div>
+                    <div>
+                        <div class="text-blue-600 font-black text-lg mb-2">STEP 03. 하반기 (파이널 실전 감각)</div>
+                        <h4 class="text-xl font-bold mb-4 italic">"완벽한 시간 관리 및 전과목 멘토링"</h4>
+                        <p class="text-slate-500 leading-relaxed font-medium">수능과 동일한 호흡으로 실전 모의고사를 훈련합니다. 수학뿐만 아니라 전과목 밸런스를 고려한 마무리 학습 전략과 치대생의 **정신력 관리 노하우**를 병행합니다.</p>
+                    </div>
                 </div>
             </div>
         </div>
