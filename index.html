@@ -10,12 +10,12 @@
         @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700;900&display=swap');
         body { font-family: 'Pretendard', sans-serif; background: #fff; color: #1d1d1f; overflow-x: hidden; width: 100%; }
         
-        /* [핵심 수정] Logic 잘림 방지 최적화 */
         .hero-title-main { font-size: clamp(1.8rem, 5vw, 4rem); line-height: 1.2; }
         .hero-title-sub { 
-            padding-right: 0.3em; /* 이탤릭체 끝부분 잘림 방지 여백 확보 */
+            padding-right: 0.3em; 
             font-size: clamp(2.2rem, 11vw, 5.5rem); 
-            line-height: 1.1; 
+            /* [수정] 행간을 0.85로 극도로 줄여서 Logic이 성적표 위로 쏙 올라오게 함 (잘림 방지 핵심) */
+            line-height: 0.85; 
             white-space: nowrap; 
             display: block; 
             letter-spacing: -0.02em;
@@ -24,7 +24,7 @@
         
         .gradient-text { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .grid-pattern { background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px); background-size: 40px 40px; }
-        .hero-section { min-height: 100vh; display: flex; align-items: center; padding: 60px 0; }
+        .hero-section { min-height: 100vh; display: flex; align-items: center; padding: 40px 0; }
         
         .floating { animation: float 3.5s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
@@ -33,9 +33,12 @@
         @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
         .step-number { -webkit-text-stroke: 1px #3b82f6; color: transparent; font-family: serif; }
         
+        /* [수정] 어색한 줄바꿈 방지 */
+        .keep-all { word-break: keep-all; break-keep: auto; }
+
         @media (max-width: 768px) {
-            .hero-section { padding-top: 40px; }
-            .hero-title-sub { font-size: clamp(2.2rem, 12vw, 3.8rem); }
+            .hero-section { padding-top: 30px; }
+            .hero-title-sub { font-size: clamp(2.2rem, 12.5vw, 3.8rem); }
         }
     </style>
 </head>
@@ -50,38 +53,28 @@
                 <h1 data-aos="fade-up" class="font-black tracking-tighter mb-6 leading-none">
                     <span class="hero-title-main block text-slate-900 mb-2">정시 승부사의 필연적</span>
                     <span class="hero-title-sub gradient-text italic font-serif">Mathematical</span>
-                    <span class="hero-title-sub gradient-text italic font-serif mt-1">Logic</span>
+                    <span class="hero-title-sub gradient-text italic font-serif mt-0">Logic</span>
                 </h1>
 
-                <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-2 mb-10 mt-8">
-                    <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">
-                        ✓ UNIST 반도체 합격
-                    </div>
-                    <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">
-                        ✓ 강원대/계명대 약대 합격
-                    </div>
-                    <div class="px-4 py-3 bg-blue-50 text-blue-700 border-2 border-blue-200 rounded-2xl font-black text-xs md:text-sm">
-                        🎯 수능 수학 백분위 100
-                    </div>
+                <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-2 mb-10 mt-6">
+                    <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ UNIST 반도체 합격</div>
+                    <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ 강원대/계명대 약대 합격</div>
+                    <div class="px-4 py-3 bg-blue-50 text-blue-700 border-2 border-blue-200 rounded-2xl font-black text-xs md:text-sm">🎯 수능 수학 백분위 100</div>
                 </div>
 
-                <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-500 mb-10 font-medium leading-relaxed break-keep">
+                <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-500 mb-10 font-medium leading-relaxed keep-all">
                     현역 3등급에서 수능 백분위 100까지.<br>
-                    치대생이 직접 겪고 뚫어낸 <span class="text-blue-600 font-black underline decoration-blue-200 underline-offset-8">실전적 사고 회로</span>를 전수합니다.
+                    치대생이 직접 뚫어낸 <span class="text-blue-600 font-black underline decoration-blue-200 underline-offset-8">실전적 사고 회로</span>를 전수합니다.
                 </p>
 
                 <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="px-10 py-5 bg-blue-600 text-white text-xl md:text-2xl font-black rounded-3xl shadow-2xl hover:bg-blue-700 transition-all text-center">
-                        카톡으로 실시간 상담
-                    </a>
+                    <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="px-10 py-5 bg-blue-600 text-white text-xl md:text-2xl font-black rounded-3xl shadow-2xl hover:bg-blue-700 transition-all text-center">카톡으로 실시간 상담</a>
                 </div>
             </div>
 
             <div class="w-full md:w-2/5 flex flex-col items-center order-1 md:order-2" data-aos="zoom-in">
                 <div class="floating relative p-5 bg-white border border-slate-200 rounded-[3.5rem] shadow-2xl w-full max-w-[280px] md:max-w-md">
-                    <div class="absolute -top-4 -right-4 bg-red-500 text-white px-5 py-1.5 rounded-2xl font-black rotate-12 shadow-lg z-20 text-xs">
-                        백분위 100
-                    </div>
+                    <div class="absolute -top-4 -right-4 bg-red-500 text-white px-5 py-1.5 rounded-2xl font-black rotate-12 shadow-lg z-20 text-xs">백분위 100</div>
                     <div class="w-full aspect-[4/3] bg-slate-50 rounded-[2.5rem] flex items-center justify-center overflow-hidden border border-slate-100 shadow-inner">
                         <img src="image.png" class="w-full h-full object-contain p-2" alt="수능 성적표">
                     </div>
@@ -94,19 +87,19 @@
         <div class="container mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div data-aos="fade-right">
-                    <h2 class="text-4xl md:text-6xl font-black mb-10 italic leading-tight">왜 '정시 치대생'인가?</h2>
-                    <p class="text-slate-400 text-xl mb-12 leading-relaxed">단순히 수학만 잘하는 과외선생이 아닙니다. 입시의 끝을 경험해본 정시 승부사만이 줄 수 있는 전략이 있습니다.</p>
+                    <h2 class="text-4xl md:text-6xl font-black mb-10 italic leading-tight keep-all">왜 '정시 치대생'인가?</h2>
+                    <p class="text-slate-400 text-xl mb-12 leading-relaxed keep-all">단순히 수학만 잘하는 과외선생이 아닙니다. 입시의 끝을 경험해본 정시 승부사만이 줄 수 있는 전략이 있습니다.</p>
                     <div class="space-y-6">
                         <div class="flex items-center gap-6 p-6 bg-slate-800 rounded-3xl border border-slate-700">
                             <span class="text-4xl">🏢</span>
-                            <div>
+                            <div class="keep-all">
                                 <h4 class="text-xl font-bold text-blue-400">학원 조교 경력 (수학)</h4>
                                 <p class="text-slate-400">수백 명의 오답 패턴과 질문을 직접 해결하며 쌓인 데이터베이스</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-6 p-6 bg-slate-800 rounded-3xl border border-slate-700">
                             <span class="text-4xl">🖋️</span>
-                            <div>
+                            <div class="keep-all">
                                 <h4 class="text-xl font-bold text-blue-400">수학 과외 다수 경험</h4>
                                 <p class="text-slate-400">고3 및 N수 미적분 전문, 성적 하위권에서 상위권으로의 도약 가이드</p>
                             </div>
@@ -115,7 +108,7 @@
                 </div>
                 <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
                     <div class="bg-blue-600 p-8 rounded-[2.5rem] text-center card-shimmer flex flex-col justify-center">
-                        <h5 class="text-4xl md:text-5xl font-black mb-2 text-white">100</h5>
+                        <h5 class="text-4xl md:text-5xl font-black mb-2">100</h5>
                         <p class="text-blue-100 font-bold">수학 백분위</p>
                     </div>
                     <div class="bg-slate-800 p-8 rounded-[2.5rem] text-center border border-slate-700 flex flex-col justify-center">
@@ -142,22 +135,22 @@
                 <div data-aos="fade-up" class="p-10 rounded-[3rem] bg-blue-50 border border-blue-100 relative group overflow-hidden">
                     <div class="text-5xl mb-8 group-hover:scale-110 transition-transform">📝</div>
                     <h3 class="text-2xl font-black mb-4 text-blue-900">복습 테스트</h3>
-                    <p class="text-slate-500 font-medium leading-relaxed">매 수업 전, 지난 시간 학습 내용에 대한 <span class="text-blue-600 font-bold italic">누적 복습 테스트</span>를 진행하여 구멍을 완벽히 차단합니다.</p>
+                    <p class="text-slate-500 font-medium leading-relaxed keep-all">매 수업 전, 지난 시간 학습 내용에 대한 누적 복습 테스트를 진행하여 구멍을 차단합니다.</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="100" class="p-10 rounded-[3rem] bg-blue-50 border border-blue-100 relative group overflow-hidden">
                     <div class="text-5xl mb-8 group-hover:scale-110 transition-transform">📚</div>
                     <h3 class="text-2xl font-black mb-4 text-blue-900">예습 과제</h3>
-                    <p class="text-slate-500 font-medium leading-relaxed">수업 효율을 200% 끌어올리는 <span class="text-blue-600 font-bold italic">개념 예습 과제</span>. 선생님의 설명을 듣기 전 스스로 고민하는 사고를 훈련합니다.</p>
+                    <p class="text-slate-500 font-medium leading-relaxed keep-all">수업 효율을 200% 끌어올리는 개념 예습 과제. 스스로 고민하는 사고를 훈련합니다.</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200" class="p-10 rounded-[3rem] bg-blue-50 border border-blue-100 relative group overflow-hidden">
                     <div class="text-5xl mb-8 group-hover:scale-110 transition-transform">🧠</div>
                     <h3 class="text-2xl font-black mb-4 text-blue-900">오답 로직 전수</h3>
-                    <p class="text-slate-500 font-medium leading-relaxed">단순히 고치는 것이 아닙니다. <span class="text-blue-600 font-bold italic">백분위 100의 오답 노트법</span>을 통해 같은 실수가 반복되는 사고 회로 자체를 수정합니다.</p>
+                    <p class="text-slate-500 font-medium leading-relaxed keep-all">백분위 100의 오답 노트법을 통해 같은 실수가 반복되는 사고 회로 자체를 수정합니다.</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="300" class="p-10 rounded-[3rem] bg-blue-50 border border-blue-100 relative group overflow-hidden">
                     <div class="text-5xl mb-8 group-hover:scale-110 transition-transform">⚡</div>
                     <h3 class="text-2xl font-black mb-4 text-blue-900">24H 질의응답</h3>
-                    <p class="text-slate-500 font-medium leading-relaxed">질문에 정규 시간은 없습니다. 막히는 문제는 언제든 사진 찍어 보내면 <span class="text-blue-600 font-bold italic">치대생의 시선으로</span> 실시간 피드백을 드립니다.</p>
+                    <p class="text-slate-500 font-medium leading-relaxed keep-all">질문에 정규 시간은 없습니다. 언제든 치대생의 시선으로 실시간 피드백을 드립니다.</p>
                 </div>
             </div>
         </div>
@@ -169,23 +162,23 @@
             <div class="space-y-16">
                 <div data-aos="fade-left" class="flex gap-8 md:gap-16 items-start">
                     <span class="step-number text-7xl md:text-9xl font-black">01</span>
-                    <div class="pt-4 md:pt-10 border-t-4 border-slate-900 flex-1">
+                    <div class="pt-4 md:pt-10 border-t-4 border-slate-900 flex-1 keep-all">
                         <h4 class="text-2xl md:text-4xl font-black mb-6">수능 수학의 필연성 확립</h4>
-                        <p class="text-slate-500 text-lg md:text-xl font-medium leading-relaxed italic">"왜 이 식을 세울 수밖에 없는가?"에 대한 근본적인 해답. 교과서 개념을 실전 킬러 문항으로 연결하는 사고 체계를 이식합니다.</p>
+                        <p class="text-slate-500 text-lg md:text-xl font-medium leading-relaxed italic">교과서 개념을 실전 킬러 문항으로 연결하는 사고 체계를 이식합니다.</p>
                     </div>
                 </div>
                 <div data-aos="fade-left" data-aos-delay="100" class="flex gap-8 md:gap-16 items-start">
                     <span class="step-number text-7xl md:text-9xl font-black">02</span>
-                    <div class="pt-4 md:pt-10 border-t-4 border-slate-900 flex-1">
+                    <div class="pt-4 md:pt-10 border-t-4 border-slate-900 flex-1 keep-all">
                         <h4 class="text-2xl md:text-4xl font-black mb-6">킬러 행동 강령 수립</h4>
-                        <p class="text-slate-500 text-lg md:text-xl font-medium leading-relaxed italic">낯선 문제를 마주했을 때 즉각적으로 반응해야 할 툴킷 정리. 준킬러 및 킬러 문항을 정복하는 '정시 승부사'의 행동 양식을 학습합니다.</p>
+                        <p class="text-slate-500 text-lg md:text-xl font-medium leading-relaxed italic">준킬러 및 킬러 문항을 정복하는 '정시 승부사'의 행동 양식을 학습합니다.</p>
                     </div>
                 </div>
                 <div data-aos="fade-left" data-aos-delay="200" class="flex gap-8 md:gap-16 items-start">
                     <span class="step-number text-7xl md:text-9xl font-black">03</span>
-                    <div class="pt-4 md:pt-10 border-t-4 border-slate-900 flex-1">
+                    <div class="pt-4 md:pt-10 border-t-4 border-slate-900 flex-1 keep-all">
                         <h4 class="text-2xl md:text-4xl font-black mb-6">압도적 실전 파이널</h4>
-                        <p class="text-slate-500 text-lg md:text-xl font-medium leading-relaxed italic">완벽한 시간 관리 노하우와 수능장 멘탈 케어. 수학 100점뿐만 아니라 전과목 정시 합격을 위한 최종 밸런스 조정.</p>
+                        <p class="text-slate-500 text-lg md:text-xl font-medium leading-relaxed italic">수학 100점뿐만 아니라 전과목 정시 합격을 위한 최종 밸런스 조정.</p>
                     </div>
                 </div>
             </div>
@@ -194,18 +187,10 @@
 
     <footer class="py-40 bg-white text-center px-6 relative overflow-hidden">
         <div class="absolute inset-0 grid-pattern opacity-10"></div>
-        <h2 data-aos="fade-up" class="text-5xl md:text-8xl font-black mb-16 tracking-tighter leading-tight italic">성적표로 증명된 실력,<br>결과로 보답합니다.</h2>
+        <h2 data-aos="fade-up" class="text-4xl md:text-8xl font-black mb-16 tracking-tighter leading-tight italic keep-all">결과로 보답합니다.</h2>
         <div class="flex flex-col items-center gap-8">
-            <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="relative group">
-                <div class="absolute inset-0 bg-blue-600 rounded-3xl blur-2xl group-hover:blur-3xl transition-all opacity-40"></div>
-                <div class="relative px-16 py-8 bg-blue-600 text-white text-2xl md:text-3xl font-black rounded-3xl hover:bg-blue-700 transition-all flex items-center gap-4 shadow-2xl">
-                    과외 상담 및 신청하기
-                    <span class="text-4xl">→</span>
-                </div>
-            </a>
-            <p class="text-slate-400 font-black text-lg tracking-widest uppercase mt-4">Currently Recruiting: Mathematics Specialist</p>
+            <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="px-16 py-8 bg-blue-600 text-white text-2xl md:text-3xl font-black rounded-3xl hover:bg-blue-700 transition-all shadow-2xl">과외 상담 및 신청하기 →</a>
         </div>
-        <p class="mt-32 text-slate-300 text-xs font-bold tracking-[1em]">© 2026 DENT-MATH LOGIC MASTERPIECE</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
