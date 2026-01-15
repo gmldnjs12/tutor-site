@@ -10,16 +10,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700;900&display=swap');
         body { font-family: 'Pretendard', sans-serif; background: #fff; color: #1d1d1f; overflow-x: hidden; }
         
-        /* [수정 부분] 글자가 절대 깨지지 않도록 설정 */
         .hero-title-main { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.2; }
         .hero-title-sub { 
-            font-size: clamp(2.0rem, 8vw, 5.5rem); /* 최대 크기를 6rem에서 5.5rem으로 살짝 조절 */
+            font-size: clamp(2.0rem, 9vw, 6rem); 
             line-height: 1.1; 
-            white-space: nowrap; /* 글자가 절대 아래로 떨어지지 않게 고정 */
-            display: inline-block;
-            max-width: 100%; /* 화면 밖으로 나가지 않게 제한 */
+            white-space: nowrap; 
+            display: inline-block; 
         }
-
         
         .gradient-text { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .grid-pattern { background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px); background-size: 40px 40px; }
@@ -39,12 +36,14 @@
                 <div data-aos="fade-right" class="inline-flex items-center px-5 py-2 rounded-full bg-blue-600 text-white font-black mb-8 shadow-xl shadow-blue-200 tracking-tighter">
                     🏆 2026 수능 정시 치과대학 재학 중
                 </div>
+                
                 <h1 data-aos="fade-up" class="font-black tracking-tighter mb-8 leading-none">
                     <span class="hero-title-main block text-slate-900 mb-2">정시 승부사의 필연적</span>
-                    <span class="hero-title-sub gradient-text italic font-serif">Mathematical Logic</span>
+                    <span class="hero-title-sub gradient-text italic font-serif block">Mathematical</span>
+                    <span class="hero-title-sub gradient-text italic font-serif block">Logic</span>
                 </h1>
 
-                <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-3 mb-12">
+                <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-3 mb-12 mt-16">
                     <div class="px-5 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg">
                         <span class="text-blue-400 mr-2">✓</span> UNIST 반도체 합격
                     </div>
