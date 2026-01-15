@@ -3,106 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>치대생의 백분위 100 수학 로직</title>
+    <title>치대생의 수학 로직 | 백분위 100</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700;900&display=swap');
-        body { font-family: 'Pretendard', sans-serif; scroll-behavior: smooth; background-color: #0f172a; }
+        body { font-family: 'Pretendard', sans-serif; background: #fff; color: #1d1d1f; overflow-x: hidden; }
         
-        /* 수학 모눈종이 배경 효과 */
-        .grid-bg {
-            background-image: radial-gradient(#1e293b 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
+        .hero-title { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .grid-pattern { background-image: radial-gradient(#e5e7eb 1.2px, transparent 1.2px); background-size: 30px 30px; }
         
-        /* 글래스모피즘 효과 */
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+        /* 성적표 이미지 강조 애니메이션 */
+        .report-card { transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .report-card:hover { transform: scale(1.03) rotate(-1deg); box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25); }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .floating { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
     </style>
 </head>
-<body class="text-slate-200">
+<body>
 
-    <section class="relative min-h-screen flex items-center justify-center grid-bg overflow-hidden px-6">
-        <div class="container mx-auto flex flex-col md:flex-row items-center gap-12 z-10">
+    <section class="relative min-h-screen flex items-center grid-pattern pt-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
             
-            <div class="md:w-1/2 flex justify-center" data-aos="fade-right">
-                <div class="relative">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-40 animate-pulse"></div>
-                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-slate-800 overflow-hidden bg-slate-900 flex items-center justify-center">
-                        <span class="text-slate-500 text-center px-4">선생님 사진이나<br>성적표를 넣어주세요</span>
-                        </div>
+            <div class="md:w-3/5 text-left">
+                <div data-aos="fade-right" class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 font-bold mb-8">
+                    🦷 치과대학 재학 중 | 수능 수학 백분위 100
                 </div>
-            </div>
-
-            <div class="md:w-1/2 text-center md:text-left">
-                <div data-aos="fade-down" class="inline-block px-4 py-1 mb-6 text-xs font-black tracking-widest text-blue-400 border border-blue-400/30 rounded-md">
-                    치과대학 재학 중 | 수학학원 조교
-                </div>
-                <h1 data-aos="fade-up" class="text-4xl md:text-6xl font-black leading-tight mb-6">
-                    3등급이 경험한<br><span class="gradient-text">백분위 100의 사고법</span>
+                <h1 data-aos="fade-up" class="text-5xl md:text-8xl font-black tracking-tight leading-tight mb-8">
+                    결과로 말하는<br><span class="hero-title">수학의 정점</span>
                 </h1>
-                <p data-aos="fade-up" data-aos-delay="200" class="text-lg text-slate-400 mb-10 leading-relaxed">
-                    자체 제작 교재와 철저한 예·복습 관리로<br>
-                    고3/N수 미적분의 한계를 정면 돌파합니다.
+                <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-500 mb-10 font-medium leading-relaxed">
+                    현역 3등급에서 수능 백분위 100까지.<br>
+                    제가 직접 뚫어낸 미적분 로직을 전수합니다.
                 </p>
-                <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="inline-block px-10 py-4 bg-blue-600 text-white font-black rounded-xl hover:bg-blue-500 hover:-translate-y-1 transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)]">
-                    시범 수업 및 상담 신청
-                </a>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="inline-block px-12 py-5 bg-blue-600 text-white text-xl font-black rounded-2xl shadow-2xl shadow-blue-200 hover:bg-blue-700 transition-all">
+                        카카오톡 실시간 상담 신청
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:w-2/5 flex flex-col items-center" data-aos="zoom-in">
+                <div class="report-card floating relative p-4 bg-white border border-slate-200 rounded-[2rem] shadow-2xl overflow-hidden max-w-sm">
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold z-10">성적표 인증</div>
+                    <div class="w-full h-[450px] bg-slate-100 rounded-xl flex items-center justify-center overflow-hidden border border-dashed border-slate-300">
+                         <span class="text-slate-400 font-bold text-center p-4 italic text-sm">이곳에 수학 백분위 100<br>성적표 사진을 넣어주세요</span>
+                         </div>
+                </div>
+                <p class="mt-6 text-slate-400 font-medium">실제 20XX 수능 성적표</p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-[#0a0f1d]">
+    <section class="py-32 bg-slate-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-black mb-16 text-center" data-aos="fade-up">Professional System</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div data-aos="fade-up" data-aos-delay="100" class="glass p-8 rounded-3xl group hover:border-blue-500/50 transition-all">
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-500 transition-colors">📑</div>
-                    <h3 class="text-xl font-bold mb-4">자체 제작 교재</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed text-justify">수학학원 조교 경험을 통해 엄선한 기출 변형 및 킬러 문항 자료로 실전 감각을 극대화합니다.</p>
+                <div data-aos="fade-up" class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all border border-slate-100">
+                    <div class="text-4xl mb-6">🩺</div>
+                    <h3 class="text-2xl font-black mb-4">치대생 멘토링</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium text-sm">최상위권 입시를 직접 뚫어낸 경험으로 전과목 학습 밸런스를 잡아드립니다.</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="200" class="glass p-8 rounded-3xl group hover:border-purple-500/50 transition-all">
-                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-500 transition-colors">🧭</div>
-                    <h3 class="text-xl font-bold mb-4">철저한 예·복습 루틴</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed text-justify">자유로운 질의응답은 기본, 치대 합격생의 철저한 복습 시스템을 학생에게 그대로 이식합니다.</p>
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all border border-slate-100">
+                    <div class="text-4xl mb-6">📝</div>
+                    <h3 class="text-2xl font-black mb-4">학원 조교 실전력</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium text-sm">유명 수학학원 조교 근무 경험으로 학생들이 자주 틀리는 오답 포인트를 정확히 알고 있습니다.</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="300" class="glass p-8 rounded-3xl group hover:border-emerald-500/50 transition-all">
-                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-emerald-500 transition-colors">🧬</div>
-                    <h3 class="text-xl font-bold mb-4">전과목 밸런스 케어</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed text-justify">수학뿐만 아니라 전반적인 학습 밸런스를 진단하여 최상위권 입시 전략을 멘토링합니다.</p>
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all border border-slate-100">
+                    <div class="text-4xl mb-6">⚙️</div>
+                    <h3 class="text-2xl font-black mb-4">미적분 맞춤 설계</h3>
+                    <p class="text-slate-500 leading-relaxed font-medium text-sm">고3·N수 미적분 선택자 전용 자체 제작 교재로 고난도 킬러 문항을 해결합니다.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-32 relative overflow-hidden">
-        <div class="absolute inset-0 grid-bg opacity-30"></div>
-        <div class="container mx-auto px-6 text-center z-10 relative">
-            <h2 data-aos="zoom-in" class="text-4xl md:text-5xl font-black mb-8 leading-tight">
-                치대생의 로직으로<br>수능 수학을 끝내세요
-            </h2>
-            <p class="text-slate-400 mb-12">현재 고3/N수 미적분 과외 상담 가능합니다.</p>
-            <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="inline-flex items-center px-12 py-5 bg-[#FEE500] text-black font-black rounded-2xl hover:bg-[#FADA0A] transition-all transform hover:scale-105 shadow-xl">
-                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 3.134-9 7 0 2.419 1.557 4.542 3.948 5.845L6 19l3.155-2.103c.278.038.562.058.845.058 4.97 0 9-3.134 9-7s-4.03-7-9-7z"/></svg>
-                카톡으로 실시간 상담하기
-            </a>
-        </div>
-    </section>
+    <footer class="py-20 bg-white border-t border-slate-100 text-center">
+        <h2 class="text-3xl font-black mb-8">성적표가 증명하는 실력,<br>당신의 숫자로 만듭니다.</h2>
+        <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold">문의: 카카오톡 오픈채팅</a>
+        <p class="mt-10 text-slate-300 text-xs">© 2026 DENT-MATH TUTORIAL. All rights reserved.</p>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
