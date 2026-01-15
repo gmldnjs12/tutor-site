@@ -13,11 +13,13 @@
         /* [수정 부분] 글자가 절대 깨지지 않도록 설정 */
         .hero-title-main { font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.2; }
         .hero-title-sub { 
-            font-size: clamp(2.0rem, 9vw, 6rem); /* 폰트 최대 크기를 살짝 조절 */
-            line-height: 1.1; 
-            white-space: nowrap; /* 글자가 옆으로 밀려도 줄바꿈 방지 */
-            display: inline-block; 
+             font-size: clamp(2.0rem, 8vw, 5.5rem); /* 최대 크기를 6rem에서 5.5rem으로 살짝 조절 */
+             line-height: 1.1; 
+             white-space: nowrap; /* 글자가 절대 아래로 떨어지지 않게 고정 */
+             display: inline-block;
+             max-width: 100%; /* 화면 밖으로 나가지 않게 제한 */
         }
+
         
         .gradient-text { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .grid-pattern { background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px); background-size: 40px 40px; }
