@@ -12,13 +12,14 @@
         
         .hero-title-main { font-size: clamp(1.8rem, 5vw, 4rem); line-height: 1.2; }
         .hero-title-sub { 
-            padding-right: 0.3em; 
+            /* [최적화] 오른쪽 여백을 더 확보하여 'l' 자 잘림 방지 */
+            padding-right: 0.5em; 
             font-size: clamp(2.2rem, 11vw, 5.5rem); 
-            /* [수정] 행간을 0.85로 극도로 줄여서 Logic이 성적표 위로 쏙 올라오게 함 (잘림 방지 핵심) */
-            line-height: 0.85; 
+            /* [최적화] 행간을 더 바짝 붙여서 Logic이 위로 올라가게 함 */
+            line-height: 0.8; 
             white-space: nowrap; 
             display: block; 
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
             overflow: visible !important;
         }
         
@@ -33,12 +34,12 @@
         @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
         .step-number { -webkit-text-stroke: 1px #3b82f6; color: transparent; font-family: serif; }
         
-        /* [수정] 어색한 줄바꿈 방지 */
         .keep-all { word-break: keep-all; break-keep: auto; }
 
         @media (max-width: 768px) {
-            .hero-section { padding-top: 30px; }
-            .hero-title-sub { font-size: clamp(2.2rem, 12.5vw, 3.8rem); }
+            .hero-section { padding-top: 20px; }
+            /* [최적화] 모바일에서 폰트 크기를 1% 더 줄여서 안전빵 확보 */
+            .hero-title-sub { font-size: clamp(2.2rem, 11.5vw, 3.8rem); }
         }
     </style>
 </head>
@@ -64,7 +65,7 @@
 
                 <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-500 mb-10 font-medium leading-relaxed keep-all">
                     현역 3등급에서 수능 백분위 100까지.<br>
-                    치대생이 직접 뚫어낸 <span class="text-blue-600 font-black underline decoration-blue-200 underline-offset-8">실전적 사고 회로</span>를 전수합니다.
+                    치대생이 직접 겪고 뚫어낸 <span class="text-blue-600 font-black underline decoration-blue-200 underline-offset-8">실전적 사고 회로</span>를 전수합니다.
                 </p>
 
                 <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row gap-4">
@@ -145,12 +146,12 @@
                 <div data-aos="fade-up" data-aos-delay="200" class="p-10 rounded-[3rem] bg-blue-50 border border-blue-100 relative group overflow-hidden">
                     <div class="text-5xl mb-8 group-hover:scale-110 transition-transform">🧠</div>
                     <h3 class="text-2xl font-black mb-4 text-blue-900">오답 로직 전수</h3>
-                    <p class="text-slate-500 font-medium leading-relaxed keep-all">백분위 100의 오답 노트법을 통해 같은 실수가 반복되는 사고 회로 자체를 수정합니다.</p>
+                    <p class="text-slate-500 font-medium leading-relaxed keep-all">백분위 100의 오답 노트법을 통해 사고 회로 자체를 수정합니다.</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="300" class="p-10 rounded-[3rem] bg-blue-50 border border-blue-100 relative group overflow-hidden">
                     <div class="text-5xl mb-8 group-hover:scale-110 transition-transform">⚡</div>
                     <h3 class="text-2xl font-black mb-4 text-blue-900">24H 질의응답</h3>
-                    <p class="text-slate-500 font-medium leading-relaxed keep-all">질문에 정규 시간은 없습니다. 언제든 치대생의 시선으로 실시간 피드백을 드립니다.</p>
+                    <p class="text-slate-500 font-medium leading-relaxed keep-all">언제든 치대생의 시선으로 실시간 피드백을 드립니다.</p>
                 </div>
             </div>
         </div>
@@ -189,7 +190,8 @@
         <div class="absolute inset-0 grid-pattern opacity-10"></div>
         <h2 data-aos="fade-up" class="text-4xl md:text-8xl font-black mb-16 tracking-tighter leading-tight italic keep-all">결과로 보답합니다.</h2>
         <div class="flex flex-col items-center gap-8">
-            <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="px-16 py-8 bg-blue-600 text-white text-2xl md:text-3xl font-black rounded-3xl hover:bg-blue-700 transition-all shadow-2xl">과외 상담 및 신청하기 →</a>
+            <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="px-12 py-6 bg-blue-600 text-white text-2xl md:text-3xl font-black rounded-3xl hover:bg-blue-700 transition-all shadow-2xl">과외 상담 및 신청하기 →</a>
+            <p class="text-slate-400 font-black text-lg tracking-widest uppercase mt-4">© 2026 DENT-MATH LOGIC MASTERPIECE</p>
         </div>
     </footer>
 
