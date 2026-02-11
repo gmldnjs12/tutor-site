@@ -14,8 +14,8 @@
         .hero-title-sub { 
             padding-right: 0.5em; 
             font-size: clamp(2.2rem, 11vw, 5.5rem); 
-            /* 행간을 1.1로 높여 g 아랫부분이 잘리거나 겹치는 현상 방지 */
-            line-height: 1.1; 
+            /* 행간 1.2로 g 아랫부분 공간 완전 확보 */
+            line-height: 1.2; 
             white-space: nowrap; 
             display: block; 
             letter-spacing: -0.02em;
@@ -33,6 +33,7 @@
         @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
         .step-number { -webkit-text-stroke: 1px #3b82f6; color: transparent; font-family: serif; }
         
+        /* 단어 단위 줄바꿈 설정 */
         .keep-all { word-break: keep-all; break-keep: auto; }
 
         @media (max-width: 768px) {
@@ -45,18 +46,18 @@
 
     <section class="hero-section relative grid-pattern px-6">
         <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row items-start md:items-center gap-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="w-full md:w-3/5 text-left order-2 md:order-1">
                     <div data-aos="fade-right" class="inline-flex items-center px-5 py-2 rounded-full bg-blue-600 text-white font-black mb-8 shadow-xl shadow-blue-200 tracking-tighter text-sm">
                         🏆 2026 수능 정시 치과대학 재학 중
                     </div>
-                    <h1 data-aos="fade-up" class="font-black tracking-tighter mb-8">
+                    <h1 data-aos="fade-up" class="font-black tracking-tighter mb-4 leading-none">
                         <span class="hero-title-main block text-slate-900 mb-2">정시 승부사의 필연적</span>
                         <span class="hero-title-sub gradient-text italic font-serif">Mathematical</span>
                         <span class="hero-title-sub gradient-text italic font-serif">Logic</span>
                     </h1>
 
-                    <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-2 mb-10 mt-12">
+                    <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-2 mb-10 mt-16">
                         <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ UNIST 반도체 합격</div>
                         <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ 강원대/계명대 약대 합격</div>
                         <div class="px-4 py-3 bg-blue-50 text-blue-700 border-2 border-blue-200 rounded-2xl font-black text-xs md:text-sm">🎯 수능 수학 백분위 100</div>
@@ -106,7 +107,7 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
-                    <div class="bg-blue-600 p-8 rounded-[2.5rem] text-center card-shimmer flex flex-col justify-center">
+                    <div class="bg-blue-600 p-8 rounded-[2.5rem] text-center card-shimmer flex flex-col justify-center shadow-2xl">
                         <h5 class="text-4xl md:text-5xl font-black mb-2 text-white">100</h5>
                         <p class="text-blue-100 font-bold">수학 백분위</p>
                     </div>
@@ -157,7 +158,7 @@
 
     <section class="py-32 bg-slate-50 px-6 border-y border-slate-200">
         <div class="container mx-auto max-w-5xl">
-            <h2 data-aos="fade-up" class="text-4xl md:text-6xl font-black mb-24 text-center italic text-slate-900 tracking-tighter">Strategic Curriculum</h2>
+            <h2 data-aos="fade-up" class="text-4xl md:text-6xl font-black mb-24 text-center italic text-slate-900 tracking-tighter keep-all">Strategic Curriculum</h2>
             <div class="space-y-16">
                 <div data-aos="fade-left" class="flex gap-8 md:gap-16 items-start">
                     <span class="step-number text-7xl md:text-9xl font-black">01</span>
