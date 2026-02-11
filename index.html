@@ -12,10 +12,9 @@
         
         .hero-title-main { font-size: clamp(1.8rem, 5vw, 4rem); line-height: 1.2; }
         .hero-title-sub { 
-            padding-right: 0.6em; 
+            padding-right: 0.5em; 
             font-size: clamp(2.2rem, 11vw, 5.5rem); 
-            /* [수정] 행간을 0.75로 더 줄여서 Logic을 위로 바짝 붙여 성적표와 안 겹치게 함 */
-            line-height: 0.75; 
+            line-height: 0.8; 
             white-space: nowrap; 
             display: block; 
             letter-spacing: -0.02em;
@@ -33,7 +32,6 @@
         @keyframes shimmer { 0% { left: -100%; } 100% { left: 100%; } }
         .step-number { -webkit-text-stroke: 1px #3b82f6; color: transparent; font-family: serif; }
         
-        /* [수정] 줄바꿈 어색함 방지 (단어 단위로 끊김) */
         .keep-all { word-break: keep-all; break-keep: auto; }
 
         @media (max-width: 768px) {
@@ -50,13 +48,13 @@
                 <div data-aos="fade-right" class="inline-flex items-center px-5 py-2 rounded-full bg-blue-600 text-white font-black mb-6 shadow-xl shadow-blue-200 tracking-tighter text-sm">
                     🏆 2026 수능 정시 치과대학 재학 중
                 </div>
-                <h1 data-aos="fade-up" class="font-black tracking-tighter mb-6 leading-none">
+                <h1 data-aos="fade-up" class="font-black tracking-tighter mb-4 leading-none">
                     <span class="hero-title-main block text-slate-900 mb-2">정시 승부사의 필연적</span>
                     <span class="hero-title-sub gradient-text italic font-serif">Mathematical</span>
                     <span class="hero-title-sub gradient-text italic font-serif mt-0">Logic</span>
                 </h1>
 
-                <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-2 mb-10 mt-6">
+                <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-2 mb-10 mt-12">
                     <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ UNIST 반도체 합격</div>
                     <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ 강원대/계명대 약대 합격</div>
                     <div class="px-4 py-3 bg-blue-50 text-blue-700 border-2 border-blue-200 rounded-2xl font-black text-xs md:text-sm">🎯 수능 수학 백분위 100</div>
@@ -64,7 +62,7 @@
 
                 <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-500 mb-10 font-medium leading-relaxed keep-all">
                     현역 3등급에서 수능 백분위 100까지.<br>
-                    치대생이 직접 뚫어낸 <span class="text-blue-600 font-black underline decoration-blue-200 underline-offset-8">실전적 사고 회로</span>를 전수합니다.
+                    치대생이 직접 겪고 뚫어낸 <span class="text-blue-600 font-black underline decoration-blue-200 underline-offset-8">실전적 사고 회로</span>를 전수합니다.
                 </p>
 
                 <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row gap-4">
@@ -130,7 +128,7 @@
 
     <section class="py-32 bg-white px-6">
         <div class="container mx-auto">
-            <h2 data-aos="fade-up" class="text-4xl md:text-6xl font-black mb-20 text-center italic text-blue-900 tracking-tighter leading-tight underline decoration-blue-500 decoration-8 underline-offset-16">The Perfectionist Management</h2>
+            <h2 data-aos="fade-up" class="text-4xl md:text-6xl font-black mb-20 text-center italic text-blue-900 tracking-tighter leading-tight underline decoration-blue-500 decoration-8 underline-offset-16 keep-all">The Perfectionist Management</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div data-aos="fade-up" class="p-10 rounded-[3rem] bg-blue-50 border border-blue-100 relative group overflow-hidden">
                     <div class="text-5xl mb-8 group-hover:scale-110 transition-transform">📝</div>
