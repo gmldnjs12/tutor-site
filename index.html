@@ -13,19 +13,22 @@
         .hero-title-main { font-size: clamp(1.8rem, 5vw, 4rem); line-height: 1.2; }
         .hero-title-sub { 
             padding-right: 0.5em; 
-            font-size: clamp(2.2rem, 11vw, 5.5rem); 
-            line-height: 0.8; 
+            /* [수정] 모바일에서 글자가 잘리지 않도록 최대 크기(clamp)를 미세하게 하향 조정 */
+            font-size: clamp(2.2rem, 10.5vw, 5.5rem); 
+            line-height: 0.85; 
             white-space: nowrap; 
             display: block; 
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
             overflow: visible !important;
+            position: relative;
+            z-index: 20;
         }
         
         .gradient-text { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .grid-pattern { background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px); background-size: 40px 40px; }
         .hero-section { min-height: 100vh; display: flex; align-items: center; padding: 40px 0; }
         
-        .floating { animation: float 3.5s ease-in-out infinite; }
+        .floating { animation: float 3.5s ease-in-out infinite; z-index: 10; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
         .card-shimmer { position: relative; overflow: hidden; }
         .card-shimmer::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); transform: rotate(45deg); animation: shimmer 4s infinite; }
@@ -36,7 +39,8 @@
 
         @media (max-width: 768px) {
             .hero-section { padding-top: 20px; }
-            .hero-title-sub { font-size: clamp(2.2rem, 11.5vw, 3.8rem); }
+            /* 모바일 특화 사이즈 */
+            .hero-title-sub { font-size: clamp(2.2rem, 11vw, 3.8rem); }
         }
     </style>
 </head>
@@ -54,7 +58,7 @@
                     <span class="hero-title-sub gradient-text italic font-serif mt-0">Logic</span>
                 </h1>
 
-                <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-2 mb-10 mt-12">
+                <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-2 mb-10 mt-16">
                     <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ UNIST 반도체 합격</div>
                     <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ 강원대/계명대 약대 합격</div>
                     <div class="px-4 py-3 bg-blue-50 text-blue-700 border-2 border-blue-200 rounded-2xl font-black text-xs md:text-sm">🎯 수능 수학 백분위 100</div>
@@ -62,7 +66,7 @@
 
                 <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-500 mb-10 font-medium leading-relaxed keep-all">
                     현역 3등급에서 수능 백분위 100까지.<br>
-                    치대생이 직접 겪고 뚫어낸 <span class="text-blue-600 font-black underline decoration-blue-200 underline-offset-8">실전적 사고 회로</span>를 전수합니다.
+                    치대생이 직접 뚫어낸 <span class="text-blue-600 font-black underline decoration-blue-200 underline-offset-8">실전적 사고 회로</span>를 전수합니다.
                 </p>
 
                 <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row gap-4">
@@ -187,7 +191,7 @@
         <div class="absolute inset-0 grid-pattern opacity-10"></div>
         <h2 data-aos="fade-up" class="text-4xl md:text-8xl font-black mb-16 tracking-tighter leading-tight italic keep-all">성적표로 증명된 실력,<br>결과로 보답합니다.</h2>
         <div class="flex flex-col items-center gap-8">
-            <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="px-12 py-6 bg-blue-600 text-white text-2xl md:text-3xl font-black rounded-3xl hover:bg-blue-700 transition-all shadow-2xl">과외 상담 및 신청하기 →</a>
+            <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="px-14 py-7 bg-blue-600 text-white text-2xl md:text-3xl font-black rounded-3xl hover:bg-blue-700 transition-all shadow-2xl">과외 상담 및 신청하기 →</a>
             <p class="text-slate-400 font-black text-lg tracking-widest uppercase mt-4">© 2026 DENT-MATH LOGIC MASTERPIECE</p>
         </div>
     </footer>
