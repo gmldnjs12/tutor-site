@@ -13,22 +13,20 @@
         .hero-title-main { font-size: clamp(1.8rem, 5vw, 4rem); line-height: 1.2; }
         .hero-title-sub { 
             padding-right: 0.5em; 
-            /* [수정] 모바일에서 글자가 잘리지 않도록 최대 크기(clamp)를 미세하게 하향 조정 */
-            font-size: clamp(2.2rem, 10.5vw, 5.5rem); 
-            line-height: 0.85; 
+            font-size: clamp(2.2rem, 11vw, 5.5rem); 
+            /* 행간을 1.1로 높여 g 아랫부분이 잘리거나 겹치는 현상 방지 */
+            line-height: 1.1; 
             white-space: nowrap; 
             display: block; 
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             overflow: visible !important;
-            position: relative;
-            z-index: 20;
         }
         
         .gradient-text { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .grid-pattern { background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px); background-size: 40px 40px; }
-        .hero-section { min-height: 100vh; display: flex; align-items: center; padding: 40px 0; }
+        .hero-section { min-height: 100vh; display: flex; align-items: center; padding: 60px 0; }
         
-        .floating { animation: float 3.5s ease-in-out infinite; z-index: 10; }
+        .floating { animation: float 3.5s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
         .card-shimmer { position: relative; overflow: hidden; }
         .card-shimmer::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent); transform: rotate(45deg); animation: shimmer 4s infinite; }
@@ -38,47 +36,46 @@
         .keep-all { word-break: keep-all; break-keep: auto; }
 
         @media (max-width: 768px) {
-            .hero-section { padding-top: 20px; }
-            /* 모바일 특화 사이즈 */
-            .hero-title-sub { font-size: clamp(2.2rem, 11vw, 3.8rem); }
+            .hero-section { padding-top: 40px; }
+            .hero-title-sub { font-size: clamp(2.2rem, 11.5vw, 3.8rem); }
         }
     </style>
 </head>
 <body>
 
     <section class="hero-section relative grid-pattern px-6">
-        <div class="container mx-auto flex flex-col md:flex-row items-center gap-10">
-            <div class="w-full md:w-3/5 text-left order-2 md:order-1">
-                <div data-aos="fade-right" class="inline-flex items-center px-5 py-2 rounded-full bg-blue-600 text-white font-black mb-6 shadow-xl shadow-blue-200 tracking-tighter text-sm">
-                    🏆 2026 수능 정시 치과대학 재학 중
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-10">
+                <div class="w-full md:w-3/5 text-left order-2 md:order-1">
+                    <div data-aos="fade-right" class="inline-flex items-center px-5 py-2 rounded-full bg-blue-600 text-white font-black mb-8 shadow-xl shadow-blue-200 tracking-tighter text-sm">
+                        🏆 2026 수능 정시 치과대학 재학 중
+                    </div>
+                    <h1 data-aos="fade-up" class="font-black tracking-tighter mb-8">
+                        <span class="hero-title-main block text-slate-900 mb-2">정시 승부사의 필연적</span>
+                        <span class="hero-title-sub gradient-text italic font-serif">Mathematical</span>
+                        <span class="hero-title-sub gradient-text italic font-serif">Logic</span>
+                    </h1>
+
+                    <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-2 mb-10 mt-12">
+                        <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ UNIST 반도체 합격</div>
+                        <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ 강원대/계명대 약대 합격</div>
+                        <div class="px-4 py-3 bg-blue-50 text-blue-700 border-2 border-blue-200 rounded-2xl font-black text-xs md:text-sm">🎯 수능 수학 백분위 100</div>
+                    </div>
+
+                    <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-500 mb-10 font-medium leading-relaxed keep-all">
+                        현역 3등급에서 수능 백분위 100까지.<br>
+                        치대생이 직접 뚫어낸 <span class="text-blue-600 font-black underline decoration-blue-200 underline-offset-8">실전적 사고 회로</span>를 전수합니다.
+                    </p>
+
+                    <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="inline-block px-10 py-5 bg-blue-600 text-white text-xl md:text-2xl font-black rounded-3xl shadow-2xl hover:bg-blue-700 transition-all text-center">카톡으로 실시간 상담</a>
                 </div>
-                <h1 data-aos="fade-up" class="font-black tracking-tighter mb-4 leading-none">
-                    <span class="hero-title-main block text-slate-900 mb-2">정시 승부사의 필연적</span>
-                    <span class="hero-title-sub gradient-text italic font-serif">Mathematical</span>
-                    <span class="hero-title-sub gradient-text italic font-serif mt-0">Logic</span>
-                </h1>
 
-                <div data-aos="fade-up" data-aos-delay="100" class="flex flex-wrap gap-2 mb-10 mt-16">
-                    <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ UNIST 반도체 합격</div>
-                    <div class="px-4 py-3 bg-slate-900 text-white rounded-2xl font-bold flex items-center shadow-lg text-xs md:text-sm">✓ 강원대/계명대 약대 합격</div>
-                    <div class="px-4 py-3 bg-blue-50 text-blue-700 border-2 border-blue-200 rounded-2xl font-black text-xs md:text-sm">🎯 수능 수학 백분위 100</div>
-                </div>
-
-                <p data-aos="fade-up" data-aos-delay="200" class="text-xl md:text-2xl text-slate-500 mb-10 font-medium leading-relaxed keep-all">
-                    현역 3등급에서 수능 백분위 100까지.<br>
-                    치대생이 직접 뚫어낸 <span class="text-blue-600 font-black underline decoration-blue-200 underline-offset-8">실전적 사고 회로</span>를 전수합니다.
-                </p>
-
-                <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row gap-4">
-                    <a href="https://open.kakao.com/o/s7tEaEbi" target="_blank" class="px-10 py-5 bg-blue-600 text-white text-xl md:text-2xl font-black rounded-3xl shadow-2xl hover:bg-blue-700 transition-all text-center">카톡으로 실시간 상담</a>
-                </div>
-            </div>
-
-            <div class="w-full md:w-2/5 flex flex-col items-center order-1 md:order-2" data-aos="zoom-in">
-                <div class="floating relative p-5 bg-white border border-slate-200 rounded-[3.5rem] shadow-2xl w-full max-w-[280px] md:max-w-md">
-                    <div class="absolute -top-4 -right-4 bg-red-500 text-white px-5 py-1.5 rounded-2xl font-black rotate-12 shadow-lg z-20 text-xs">백분위 100</div>
-                    <div class="w-full aspect-[4/3] bg-slate-50 rounded-[2.5rem] flex items-center justify-center overflow-hidden border border-slate-100 shadow-inner">
-                        <img src="image.png" class="w-full h-full object-contain p-2" alt="수능 성적표">
+                <div class="w-full md:w-2/5 flex justify-center order-1 md:order-2" data-aos="zoom-in">
+                    <div class="floating relative p-5 bg-white border border-slate-200 rounded-[3.5rem] shadow-2xl w-full max-w-[320px] md:max-w-md">
+                        <div class="absolute -top-4 -right-4 bg-red-500 text-white px-5 py-1.5 rounded-2xl font-black rotate-12 shadow-lg z-20 text-xs">백분위 100</div>
+                        <div class="w-full aspect-[4/3] bg-slate-50 rounded-[2.5rem] flex items-center justify-center overflow-hidden border border-slate-100 shadow-inner">
+                            <img src="image.png" class="w-full h-full object-contain p-2" alt="수능 성적표">
+                        </div>
                     </div>
                 </div>
             </div>
